@@ -1,0 +1,13 @@
+---
+interface Props {
+  children: string;
+  light?: boolean;
+}
+
+const { children, light = false } = Astro.props;
+---
+
+<p class:list={["section-label", { "section-label--light": light }]}>
+  <span aria-hidden="true"></span>
+  {children}
+</p>

@@ -1,0 +1,43 @@
+---
+import type { Locale, SiteContent } from "@/data/types";
+import { localePath } from "@/lib/i18n";
+import LanguageLinks from "./LanguageLinks.astro";
+
+interface Props {
+  locale: Locale;
+  content: SiteContent;
+  currentPath: string;
+}
+
+const { locale, content, currentPath } = Astro.props;
+const home = localePath(locale);
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={home} aria-label="Amdjad Aboubakar">
+      <span aria-hidden="true">AA</span>
+      <span class="brand-name">Amdjad Aboubakar</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label={content.nav.menu}>
+      <a href={`${home}#work`}>{content.nav.work}</a>
+      <a href={`${home}#journey`}>{content.nav.journey}</a>
+      <a href={`${home}#purpose`}>{content.nav.purpose}</a>
+      <LanguageLinks locale={locale} currentPath={currentPath} label={content.nav.language} />
+    </nav>
+
+    <details class="mobile-nav">
+      <summary>
+        <span class="menu-label">{content.nav.menu}</span>
+        <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+      </summary>
+      <div class="mobile-nav-panel">
+        <a href={`${home}#work`}>{content.nav.work}</a>
+        <a href={`${home}#journey`}>{content.nav.journey}</a>
+        <a href={`${home}#purpose`}>{content.nav.purpose}</a>
+        <LanguageLinks locale={locale} currentPath={currentPath} label={content.nav.language} />
+      </div>
+    </details>
+  </div>
+</header>

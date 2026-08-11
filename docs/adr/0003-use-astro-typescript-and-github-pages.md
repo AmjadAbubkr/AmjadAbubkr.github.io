@@ -1,0 +1,3 @@
+# Use Astro, TypeScript, and GitHub Pages
+
+The portfolio will be built as a statically generated Astro site with TypeScript and deployed through GitHub Actions to GitHub Pages. Astro fits the multilingual, content-focused portfolio while shipping minimal client JavaScript. GitHub Pages fits the static output without adding a hosting runtime or consuming Netlify credits. The repository should use the special `AmjadAbubkr.github.io` name so the temporary GitHub URL and future custom domain both serve from `/`, avoiding repository-subpath handling. Next.js, Supabase, and a custom content dashboard remain excluded from the first release because their application and data-management features do not solve a required problem.

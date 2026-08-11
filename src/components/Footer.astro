@@ -1,0 +1,25 @@
+---
+import type { SiteContent } from "@/data/types";
+import SocialLinks from "./SocialLinks.astro";
+import SectionLabel from "./SectionLabel.astro";
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+---
+
+<footer class="site-footer" id="details">
+  <div class="container footer-inner reveal">
+    <SectionLabel>{content.closing.eyebrow}</SectionLabel>
+    <h2>{content.closing.title}</h2>
+    <p>{content.closing.body}</p>
+    <SocialLinks emailLabel={content.closing.email} githubLabel={content.closing.github} />
+    <div class="footer-bottom">
+      <span class="footer-mark" aria-hidden="true">AA</span>
+      <span>{content.closing.rights}</span>
+      <span>© {new Date().getFullYear()} Amdjad Aboubakar</span>
+    </div>
+  </div>
+</footer>

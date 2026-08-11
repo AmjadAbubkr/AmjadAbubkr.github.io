@@ -1,0 +1,29 @@
+---
+import Footer from "@/components/Footer.astro";
+import { getContent } from "@/data/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const content = getContent("fr");
+---
+
+<BaseLayout locale="fr" content={content} title={`404 — ${content.errors.notFoundTitle}`} noindex>
+  <section class="not-found">
+    <div class="container">
+      <span>404</span>
+      <h1>{content.errors.notFoundTitle}</h1>
+      <p>{content.errors.notFoundBody}</p>
+      <a href="/fr/">{content.errors.home} <i aria-hidden="true">→</i></a>
+    </div>
+  </section>
+  <Footer content={content} />
+</BaseLayout>
+
+<style>
+  .not-found { display: grid; min-height: 80vh; padding-block: 10rem 5rem; align-items: center; }
+  .not-found span { display: block; margin-block-end: 1rem; color: var(--accent); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.16em; }
+  .not-found h1 { max-width: 12ch; margin-block-end: 1.5rem; font-size: clamp(3.5rem, 10vw, 8rem); letter-spacing: -0.07em; line-height: 0.92; }
+  .not-found p { max-width: 35rem; color: var(--text-secondary); }
+  .not-found a { display: inline-flex; min-height: 44px; margin-block-start: 1rem; align-items: center; gap: 0.7rem; color: var(--accent); font-weight: 750; }
+  .not-found i { font-style: normal; transition-property: transform; transition-duration: 180ms; transition-timing-function: ease-out; }
+  .not-found a:hover i { transform: translateX(4px); }
+</style>

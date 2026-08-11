@@ -1,0 +1,423 @@
+---
+import Footer from "@/components/Footer.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import SectionLabel from "@/components/SectionLabel.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
+import { getContent } from "@/data/site";
+import { locales, projectSlugs, type Locale } from "@/data/types";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const content = getContent(locale);
+const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", "Aboubakar"];
+---
+
+<BaseLayout locale={locale} content={content}>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-name-block">
+        <p class="hero-kicker">{content.hero.location}</p>
+        <h1 id="hero-title">
+          <span>{displayName[0]}</span>
+          <span>{displayName[1]}<b aria-hidden="true">.</b></span>
+        </h1>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <SocialLinks emailLabel={content.closing.email} githubLabel={content.closing.github} compact />
+      </div>
+
+      <figure class="hero-portrait">
+        <div class="portrait-index" aria-hidden="true">01</div>
+        <img src="/images/amdjad-hero.webp" width="1100" height="1100" alt={content.hero.portraitAlt} fetchpriority="high" />
+        <figcaption>{content.hero.location}</figcaption>
+      </figure>
+
+      <div class="hero-intro">
+        <SectionLabel>{content.hero.eyebrow}</SectionLabel>
+        <p class="hero-statement">{content.hero.role}</p>
+        <p class="hero-summary">{content.hero.summary}</p>
+        <a class="text-link" href="#work">
+          {content.hero.scroll}
+          <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-count" aria-hidden="true">NDJ — 12°06′N</div>
+  </section>
+
+  <section class="work-section" id="work" aria-labelledby="work-title">
+    <div class="container work-intro reveal">
+      <div>
+        <SectionLabel>{content.work.eyebrow}</SectionLabel>
+        <h2 id="work-title">{content.work.title}</h2>
+      </div>
+      <p>{content.work.intro}</p>
+    </div>
+
+    <div class="container projects-grid">
+      {
+        projectSlugs.map((slug, index) => (
+          <ProjectCard
+            locale={locale}
+            slug={slug}
+            project={content.projects[slug]}
+            readLabel={content.work.read}
+            index={index}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="capabilities-section" aria-labelledby="capabilities-title">
+    <div class="container capabilities-layout">
+      <div class="capabilities-heading reveal">
+        <SectionLabel>{content.capabilities.eyebrow}</SectionLabel>
+        <h2 id="capabilities-title">{content.capabilities.title}</h2>
+        <p>{content.capabilities.intro}</p>
+      </div>
+      <div class="capability-list">
+        {
+          content.capabilities.items.map((item, index) => (
+            <article class="capability-item reveal" style={`--reveal-delay:${index * 80}ms`}>
+              <span class="capability-number">{item.number}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+                <small>{item.evidence}</small>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="journey-section" id="journey" aria-labelledby="journey-title">
+    <div class="container journey-layout">
+      <div class="journey-heading reveal">
+        <SectionLabel>{content.journey.eyebrow}</SectionLabel>
+        <h2 id="journey-title">{content.journey.title}</h2>
+        <p>{content.journey.intro}</p>
+      </div>
+      <ol class="journey-list">
+        {
+          content.journey.items.map((item, index) => (
+            <li class="reveal" style={`--reveal-delay:${index * 80}ms`}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <small>{item.marker}</small>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="journey-note">{content.journey.resumeNote}</p>
+    </div>
+  </section>
+
+  <section class="purpose-section" id="purpose" aria-labelledby="purpose-title">
+    <div class="purpose-watermark" aria-hidden="true">AA</div>
+    <div class="container purpose-layout">
+      <div class="purpose-heading reveal">
+        <SectionLabel light>{content.purpose.eyebrow}</SectionLabel>
+        <h2 id="purpose-title">{content.purpose.title}</h2>
+      </div>
+      <div class="purpose-copy reveal" style="--reveal-delay:100ms">
+        <blockquote>{content.purpose.statement}</blockquote>
+        <p>{content.purpose.body}</p>
+        <ul aria-label={content.purpose.eyebrow}>
+          {content.purpose.principles.map((principle) => <li>{principle}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <Footer content={content} />
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 820px;
+    overflow: hidden;
+    background: var(--bg-primary);
+  }
+
+  .hero::before {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(90deg, transparent 49.9%, rgba(255, 255, 255, 0.035) 50%, transparent 50.1%);
+    content: "";
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    display: grid;
+    min-height: 100vh;
+    padding-block: 9rem 4rem;
+    align-items: center;
+    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.08fr) minmax(0, 0.82fr);
+    gap: clamp(1.5rem, 3vw, 3.5rem);
+  }
+
+  .hero-name-block {
+    position: relative;
+    z-index: 3;
+    min-width: 0;
+    align-self: center;
+    animation: hero-enter 680ms var(--ease-out) both;
+  }
+
+  .hero-kicker {
+    margin-block-end: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    margin: 0;
+    font-size: clamp(4rem, 8vw, 8.4rem);
+    font-weight: 750;
+    letter-spacing: -0.075em;
+    line-height: 0.82;
+  }
+
+  :global([dir="rtl"]) .hero h1 {
+    font-size: clamp(4.4rem, 8vw, 8.4rem);
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+  }
+
+  .hero h1 span { display: block; white-space: nowrap; }
+  .hero h1 b { color: var(--accent); font-weight: inherit; }
+  .hero-rule { width: 3.5rem; height: 0.35rem; margin-block: 2rem; background: var(--accent); }
+
+  .hero-portrait {
+    position: relative;
+    z-index: 1;
+    height: min(82vh, 810px);
+    min-height: 600px;
+    margin: 0;
+    align-self: end;
+    animation: hero-enter 720ms 100ms var(--ease-out) both;
+  }
+
+  .hero-portrait::before {
+    position: absolute;
+    z-index: -1;
+    inset-block-end: 5%;
+    inset-inline: 4%;
+    height: 38%;
+    background: var(--accent);
+    content: "";
+    opacity: 0.12;
+  }
+
+  .hero-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 24%;
+    mask-image: linear-gradient(to bottom, transparent 0, black 8%, black 88%, transparent 100%), linear-gradient(to right, transparent 0, black 10%, black 90%, transparent 100%);
+    mask-composite: intersect;
+  }
+
+  .hero-portrait figcaption {
+    position: absolute;
+    inset-block-end: 1.5rem;
+    inset-inline-start: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+  }
+
+  .portrait-index {
+    position: absolute;
+    z-index: 2;
+    inset-block-start: 10%;
+    inset-inline-end: 0;
+    color: rgba(255, 255, 255, 0.12);
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .hero-intro {
+    position: relative;
+    z-index: 3;
+    animation: hero-enter 680ms 200ms var(--ease-out) both;
+  }
+
+  .hero-statement {
+    margin-block-end: 1.5rem;
+    font-size: clamp(1.55rem, 2.7vw, 2.55rem);
+    font-weight: 650;
+    letter-spacing: -0.045em;
+    line-height: 1.18;
+  }
+
+  .hero-summary {
+    max-width: 32rem;
+    margin-block-end: 1.8rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  .text-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--accent);
+    font-size: 0.84rem;
+    font-weight: 750;
+  }
+
+  .text-link span {
+    transition-property: transform;
+    transition-duration: 180ms;
+    transition-timing-function: ease-out;
+  }
+
+  .text-link:hover span { transform: translateY(4px); }
+  .hero-count { position: absolute; inset-block-end: 1.5rem; inset-inline-end: 2rem; color: var(--text-muted); font-size: 0.65rem; letter-spacing: 0.14em; }
+
+  .work-section {
+    padding-block: var(--section-space);
+    background: var(--bg-deep);
+  }
+
+  .work-intro {
+    display: grid;
+    margin-block-end: clamp(4rem, 8vw, 7rem);
+    grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.65fr);
+    gap: 4rem;
+  }
+
+  .work-intro h2,
+  .capabilities-heading h2,
+  .journey-heading h2,
+  .purpose-heading h2 {
+    margin: 0;
+    font-size: clamp(2.7rem, 5vw, 5rem);
+    letter-spacing: -0.06em;
+    line-height: 0.98;
+  }
+
+  .work-intro > p,
+  .capabilities-heading > p,
+  .journey-heading > p {
+    align-self: end;
+    margin: 0;
+    color: var(--text-secondary);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(4rem, 9vw, 8rem) clamp(2rem, 5vw, 4.5rem);
+  }
+
+  .projects-grid :global(.project-card:nth-child(even)) { transform: translateY(8rem); }
+  .projects-grid { padding-block-end: 8rem; }
+
+  .capabilities-section {
+    padding-block: var(--section-space);
+    background: var(--bg-primary);
+  }
+
+  .capabilities-layout,
+  .journey-layout,
+  .purpose-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(3rem, 9vw, 8rem);
+  }
+
+  .capabilities-heading > p,
+  .journey-heading > p { margin-block-start: 1.5rem; max-width: 34rem; }
+  .capability-list { border-top: 1px solid var(--divider); }
+  .capability-item { display: grid; padding-block: 2.5rem; grid-template-columns: 4rem 1fr; gap: 1.5rem; border-bottom: 1px solid var(--divider); }
+  .capability-number { color: var(--accent); font-size: 0.75rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .capability-item h3 { margin-block-end: 0.75rem; font-size: clamp(1.6rem, 3vw, 2.35rem); letter-spacing: -0.045em; line-height: 1.1; }
+  .capability-item p { max-width: 40rem; margin-block-end: 1rem; color: var(--text-secondary); }
+  .capability-item small { color: var(--text-muted); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .journey-section { padding-block: var(--section-space); background: var(--bg-deep); }
+  .journey-layout { grid-template-areas: "heading list" "note list"; }
+  .journey-heading { grid-area: heading; }
+  .journey-list { grid-area: list; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--divider); }
+  .journey-list li { display: grid; padding-block: 2.5rem; grid-template-columns: 3rem 1fr; gap: 1.5rem; border-bottom: 1px solid var(--divider); }
+  .journey-list li > span { color: var(--accent); font-size: 0.75rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .journey-list small { color: var(--text-muted); font-size: 0.7rem; font-weight: 750; letter-spacing: 0.12em; text-transform: uppercase; }
+  .journey-list h3 { margin-block: 0.4rem 0.7rem; font-size: clamp(1.5rem, 2.5vw, 2rem); letter-spacing: -0.035em; }
+  .journey-list p { margin: 0; color: var(--text-secondary); }
+  .journey-note { grid-area: note; align-self: end; margin: 0; color: var(--text-muted); font-size: 0.78rem; }
+
+  .purpose-section { position: relative; overflow: hidden; padding-block: var(--section-space); background: var(--accent); color: var(--bg-deep); }
+  .purpose-watermark { position: absolute; inset-block-end: -0.22em; inset-inline-start: -0.05em; color: rgba(35, 39, 51, 0.08); font-size: clamp(12rem, 35vw, 34rem); font-weight: 850; letter-spacing: -0.12em; line-height: 0.7; }
+  .purpose-layout { position: relative; z-index: 1; }
+  .purpose-copy blockquote { max-width: 30ch; margin: 0 0 2rem; font-size: clamp(1.7rem, 3.5vw, 3.2rem); font-weight: 650; letter-spacing: -0.045em; line-height: 1.15; }
+  .purpose-copy > p { max-width: 43rem; color: rgba(35, 39, 51, 0.77); }
+  .purpose-copy ul { display: flex; margin: 2rem 0 0; padding: 0; flex-wrap: wrap; gap: 0.6rem; list-style: none; }
+  .purpose-copy li { padding: 0.45rem 0.7rem; color: var(--bg-deep); box-shadow: 0 0 0 1px rgba(35, 39, 51, 0.22); font-size: 0.72rem; font-weight: 750; }
+
+  @keyframes hero-enter {
+    from { opacity: 0; filter: blur(4px); transform: translateY(20px); }
+    to { opacity: 1; filter: blur(0); transform: translateY(0); }
+  }
+
+  @media (max-width: 1050px) {
+    .hero-grid { min-height: 900px; grid-template-columns: 0.8fr 1fr; grid-template-areas: "name portrait" "intro portrait"; }
+    .hero-name-block { grid-area: name; align-self: end; }
+    .hero-portrait { grid-area: portrait; height: 74vh; }
+    .hero-intro { grid-area: intro; align-self: start; }
+    .hero h1 { font-size: clamp(4rem, 10vw, 7rem); }
+  }
+
+  @media (max-width: 800px) {
+    .work-intro,
+    .capabilities-layout,
+    .journey-layout,
+    .purpose-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .journey-layout { grid-template-areas: "heading" "list" "note"; }
+    .projects-grid { gap: 4rem 1.5rem; }
+    .projects-grid :global(.project-card:nth-child(even)) { transform: translateY(4rem); }
+    .projects-grid { padding-block-end: 4rem; }
+  }
+
+  @media (max-width: 650px) {
+    .hero-grid { min-height: 0; padding-block: 7.5rem 4rem; grid-template-columns: minmax(0, 1fr); grid-template-areas: "name" "portrait" "intro"; gap: 2rem; }
+    :global([dir="rtl"]) .hero-grid { direction: ltr; }
+    :global([dir="rtl"]) .hero-name-block,
+    :global([dir="rtl"]) .hero-intro { direction: rtl; }
+    .hero-name-block { width: 100%; align-self: auto; }
+    .hero h1 { font-size: clamp(3rem, 16vw, 4.2rem); }
+    :global([dir="rtl"]) .hero h1 { font-size: clamp(2.8rem, 13vw, 4rem); }
+    .hero-portrait { width: calc(100% + 2.5rem); height: 65vh; min-height: 500px; margin-inline: -1.25rem; }
+    .hero-portrait figcaption { display: none; }
+    .hero-count { display: none; }
+    .work-intro { margin-block-end: 3rem; }
+    .projects-grid { grid-template-columns: 1fr; padding-block-end: 0; }
+    .projects-grid :global(.project-card:nth-child(even)) { transform: none; }
+    .capability-item,
+    .journey-list li { grid-template-columns: 2.3rem 1fr; gap: 0.8rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-name-block,
+    .hero-portrait,
+    .hero-intro { animation: none; }
+  }
+</style>

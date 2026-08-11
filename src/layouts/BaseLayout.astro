@@ -1,0 +1,110 @@
+---
+import Header from "@/components/Header.astro";
+import type { Locale, SiteContent } from "@/data/types";
+import { locales } from "@/data/types";
+import { alternateLocalePath, direction } from "@/lib/i18n";
+import "@/styles/global.css";
+
+interface Props {
+  locale: Locale;
+  content: SiteContent;
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  locale,
+  content,
+  title = content.meta.title,
+  description = content.meta.description,
+  image = "/images/amdjad-hero.webp",
+  noindex = false,
+} = Astro.props;
+
+const baseUrl = Astro.site ?? Astro.url.origin;
+const canonicalUrl = new URL(Astro.url.pathname, baseUrl);
+const imageUrl = new URL(image, baseUrl);
+const alternates = locales.map((item) => ({
+  locale: item,
+  url: new URL(alternateLocalePath(Astro.url.pathname, item), baseUrl),
+}));
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Amdjad Aboubakar",
+  alternateName: "أمجد أبوبكر",
+  jobTitle: locale === "ar" ? "مهندس برمجيات ومطوّر منتجات" : locale === "fr" ? "Ingénieur logiciel et créateur de produits" : "Software Engineer & Product Builder",
+  homeLocation: { "@type": "Place", name: "N'Djamena, Chad" },
+  url: canonicalUrl.href,
+  sameAs: ["https://github.com/AmjadAbubkr"],
+};
+const skipLabel = locale === "ar" ? "انتقل إلى المحتوى" : locale === "fr" ? "Aller au contenu" : "Skip to content";
+---
+
+<!doctype html>
+<html lang={locale} dir={direction(locale)}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#323544" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonicalUrl} />
+    {alternates.map((item) => <link rel="alternate" hreflang={item.locale} href={item.url} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL("/fr/", baseUrl)} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Amdjad Aboubakar" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:locale" content={locale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <title>{title}</title>
+    <script is:inline>document.documentElement.classList.add("js");</script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{skipLabel}</a>
+    <Header locale={locale} content={content} currentPath={Astro.url.pathname} />
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <script is:inline>
+      const preferenceKey = "amdjad-portfolio-locale";
+      document.querySelectorAll("[data-locale-choice]").forEach((link) => {
+        link.addEventListener("click", () => {
+          try { localStorage.setItem(preferenceKey, link.dataset.localeChoice); } catch {}
+        });
+      });
+
+      document.querySelectorAll(".mobile-nav a").forEach((link) => {
+        link.addEventListener("click", () => link.closest("details")?.removeAttribute("open"));
+      });
+
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealItems = document.querySelectorAll(".reveal");
+      if (reducedMotion || !("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      } else {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -40px" });
+        revealItems.forEach((item) => observer.observe(item));
+      }
+    </script>
+  </body>
+</html>

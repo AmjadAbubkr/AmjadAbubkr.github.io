@@ -1,0 +1,3 @@
+# Use explicit locale routes with client entry detection
+
+Every indexable page will use an explicit `/fr/`, `/ar/`, or `/en/` route, including French, so canonical links, alternate-language metadata, sharing, and saved URLs remain deterministic. The unlocalized root is only an entry point: it chooses a saved supported language first, then a supported device or browser language, and otherwise French; a French link remains available when client scripting is unavailable. This accepts a small redirect step in exchange for stable multilingual URLs and avoids silently changing the language of an already localized link.

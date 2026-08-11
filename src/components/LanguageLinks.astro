@@ -1,0 +1,30 @@
+---
+import { siteContent } from "@/data/site";
+import { locales, type Locale } from "@/data/types";
+import { alternateLocalePath } from "@/lib/i18n";
+
+interface Props {
+  locale: Locale;
+  currentPath: string;
+  label: string;
+}
+
+const { locale, currentPath, label } = Astro.props;
+---
+
+<nav class="language-links" aria-label={label}>
+  {
+    locales.map((item) => (
+      <a
+        href={alternateLocalePath(currentPath, item)}
+        lang={item}
+        dir={item === "ar" ? "rtl" : "ltr"}
+        hreflang={item}
+        aria-current={item === locale ? "page" : undefined}
+        data-locale-choice={item}
+      >
+        {siteContent[item].localeName}
+      </a>
+    ))
+  }
+</nav>

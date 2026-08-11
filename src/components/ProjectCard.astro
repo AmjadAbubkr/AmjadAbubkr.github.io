@@ -1,0 +1,33 @@
+---
+import type { Locale, ProjectContent, ProjectSlug } from "@/data/types";
+import { localePath } from "@/lib/i18n";
+import ProjectVisual from "./ProjectVisual.astro";
+
+interface Props {
+  locale: Locale;
+  slug: ProjectSlug;
+  project: ProjectContent;
+  readLabel: string;
+  index: number;
+}
+
+const { locale, slug, project, readLabel, index } = Astro.props;
+---
+
+<article class="project-card reveal" style={`--reveal-delay:${Math.min(index * 80, 240)}ms`}>
+  <a class="project-card-link" href={localePath(locale, `work/${slug}`)} aria-label={`${readLabel}: ${project.title}`}>
+    <ProjectVisual slug={slug} title={project.title} />
+    <div class="project-card-copy">
+      <div>
+        <p>{project.category}</p>
+        <h3>{project.title}</h3>
+      </div>
+      <span class="project-arrow" aria-hidden="true">↗</span>
+    </div>
+    <p class="project-summary">{project.summary}</p>
+    <div class="project-meta">
+      <span>{project.role}</span>
+      <span>{project.status}</span>
+    </div>
+  </a>
+</article>

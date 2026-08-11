@@ -1,0 +1,3 @@
+# Launch in French, Arabic, and English
+
+The portfolio will launch with complete French, Arabic, and English versions so it can credibly serve national audiences in Chad and international technology audiences from its first release. On a first visit, the site will select a supported device or browser language and otherwise fall back to French; a visitor's saved manual choice takes precedence. This deliberately accepts additional writing, right-to-left design, language-routing, and quality-assurance work now to avoid retrofitting multilingual content and layouts after the site structure is established.

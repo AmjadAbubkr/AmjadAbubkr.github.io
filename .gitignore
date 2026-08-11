@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.scratch/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+20260802_162424(1)(1)(1).jpg
+Marketing and Sales Resume in Grey Black Simple Style_20260809_205333_0000.pdf
+design (1).md
