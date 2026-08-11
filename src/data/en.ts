@@ -254,7 +254,7 @@ export const en = {
         "Reliable AI products are mostly about the system around the model: clear stages, saved state, compatible data, honest errors, and a useful path when an external service cannot continue.",
     },
     hamid: {
-      title: "Hamid",
+      title: "Hamid Azaz Portfolio",
       category: "Client platform · Multilingual publishing",
       status: "Live at hamidazaz.com",
       role: "Lead Full-Stack Engineer",

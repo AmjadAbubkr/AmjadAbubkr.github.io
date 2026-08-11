@@ -254,7 +254,7 @@ export const fr = {
         "Un produit d'IA fiable dépend surtout du système autour du modèle : étapes claires, état sauvegardé, données compatibles, erreurs honnêtes et voie utile lorsque le fournisseur ne peut plus continuer.",
     },
     hamid: {
-      title: "Hamid",
+      title: "Hamid Azaz Portfolio",
       category: "Plateforme client · Publication multilingue",
       status: "En ligne sur hamidazaz.com",
       role: "Ingénieur full-stack principal",

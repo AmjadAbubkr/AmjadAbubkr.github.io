@@ -71,7 +71,7 @@ The name or monogram returns to the top. Do not include Services, Blog, Contact,
 - Central theme: turn a complex audio-and-AI pipeline into a usable mobile workflow while preserving local history, secure key storage, retryable processing, and honest external-service limitations.
 - Do not imply unlimited AI availability, perfect transcription, or a public production release.
 
-### 4. Hamid
+### 4. Hamid Azaz Portfolio
 
 - Attribution: **Lead Full-Stack Engineer for a client public-profile platform**.
 - Status: **Live at [hamidazaz.com](https://hamidazaz.com/)**.

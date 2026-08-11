@@ -69,7 +69,7 @@ Meeting App, presented as work led by Amdjad Aboubakar as Lead Mobile Engineer t
 _Avoid_: AI wrapper, guaranteed transcription, unlimited AI claim
 
 **Fourth case study**:
-Hamid, a client public-profile and publishing platform led by Amdjad Aboubakar as Lead Full-Stack Engineer, presented to demonstrate secure multilingual content systems for a Chadian public figure without confusing the client's identity or achievements with Amdjad Aboubakar's own.
+Hamid Azaz Portfolio, a client public-profile and publishing platform led by Amdjad Aboubakar as Lead Full-Stack Engineer, presented to demonstrate secure multilingual content systems for a Chadian public figure without confusing the client's identity or achievements with Amdjad Aboubakar's own.
 _Avoid_: Amdjad Aboubakar's profile, political endorsement, sole-subject ownership claim
 
 **Khidme problem**:
