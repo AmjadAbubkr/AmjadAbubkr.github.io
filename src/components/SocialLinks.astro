@@ -1,5 +1,5 @@
 ---
-import { githubUrl, publicEmail } from "@/data/site";
+import { githubUrl, publicEmail, socialProfiles } from "@/data/site";
 
 interface Props {
   emailLabel: string;
@@ -27,4 +27,41 @@ const { emailLabel, githubLabel, compact = false } = Astro.props;
     </svg>
     {!compact && <span>{githubLabel}</span>}
   </a>
+  {
+    socialProfiles.map((profile) => (
+      <a href={profile.url} rel="me noreferrer" target="_blank" aria-label={profile.name} title={profile.name}>
+        {
+          profile.name === "LinkedIn" && (
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M5.1 3.4A1.9 1.9 0 1 1 5.1 7a1.9 1.9 0 0 1 0-3.7ZM3.5 8.4h3.2v12.1H3.5V8.4Zm5.2 0h3.1V10h.1c.4-.8 1.5-2 3.5-2 3.7 0 4.4 2.4 4.4 5.6v6.9h-3.2v-6.1c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3v6.2H8.7V8.4Z" />
+            </svg>
+          )
+        }
+        {
+          profile.name === "Instagram" && (
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+              <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="17.5" cy="6.7" r="1.1" fill="currentColor" />
+            </svg>
+          )
+        }
+        {
+          profile.name === "X" && (
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M5 3.5h3.7l3.8 5.1 4.3-5.1H19l-5.5 6.4 5.8 7.8h-3.7l-4.1-5.6-4.8 5.6H4.5l5.9-6.9L5 3.5Zm2.7 1.9 8.2 10.8h1.5L9.2 5.4H7.7Z" />
+            </svg>
+          )
+        }
+        {
+          profile.name === "Facebook" && (
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M13.7 20.6v-7.7h2.6l.4-3h-3v-1.9c0-.9.3-1.5 1.6-1.5h1.7V3.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1V10H8v3h2.6v7.6h3.1Z" />
+            </svg>
+          )
+        }
+        {!compact && <span>{profile.name}</span>}
+      </a>
+    ))
+  }
 </div>
