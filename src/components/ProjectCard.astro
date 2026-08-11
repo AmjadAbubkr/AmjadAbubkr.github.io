@@ -16,7 +16,7 @@ const { locale, slug, project, readLabel, index } = Astro.props;
 
 <article class="project-card reveal" style={`--reveal-delay:${Math.min(index * 80, 240)}ms`}>
   <a class="project-card-link" href={localePath(locale, `work/${slug}`)} aria-label={`${readLabel}: ${project.title}`}>
-    <ProjectVisual slug={slug} title={project.title} />
+    <ProjectVisual slug={slug} />
     <div class="project-card-copy">
       <div>
         <p>{project.category}</p>

@@ -1,7 +1,7 @@
 import { ar } from "./ar";
 import { en } from "./en";
 import { fr } from "./fr";
-import type { Locale, SiteContent } from "./types";
+import type { Locale, ProjectSlug, SiteContent } from "./types";
 
 export const siteContent: Record<Locale, SiteContent> = { fr, ar, en };
 
@@ -17,3 +17,7 @@ export const socialProfiles = [
   { name: "X", url: "https://x.com/AmjadAbubkr" },
   { name: "Facebook", url: "https://www.facebook.com/amjad.abubkr/" },
 ] as const;
+
+export const projectLinks: Partial<Record<ProjectSlug, string>> = {
+  hamid: "https://hamidazaz.com/",
+};

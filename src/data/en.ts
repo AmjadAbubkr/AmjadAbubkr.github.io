@@ -108,6 +108,7 @@ export const en = {
   caseStudy: {
     back: "Back to selected work",
     next: "Next case study",
+    visit: "Visit the live site",
     role: "Role",
     status: "Status",
     technologies: "Technology context",
@@ -255,7 +256,7 @@ export const en = {
     hamid: {
       title: "Hamid",
       category: "Client platform · Multilingual publishing",
-      status: "Deployment preparation",
+      status: "Live at hamidazaz.com",
       role: "Lead Full-Stack Engineer",
       summary:
         "An Arabic-and-French public profile and private publishing Portal built for a Chadian diplomat and politician.",
@@ -290,7 +291,7 @@ export const en = {
       ],
       limitsLabel: "Current limits",
       limits: [
-        "The case study remains labeled deployment preparation until a live production deployment is verified.",
+        "The public site is live at hamidazaz.com; this case study does not claim outcomes beyond deployment.",
         "Hamid's identity, career, views, and achievements belong to the client and are not Amdjad's claims.",
         "The product intentionally supports Arabic and French only; English was outside its approved scope.",
       ],

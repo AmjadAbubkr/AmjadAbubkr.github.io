@@ -30,6 +30,10 @@ describe("localized site content", () => {
     for (const locale of locales) {
       for (const slug of projectSlugs) {
         const status = siteContent[locale].projects[slug].status.toLowerCase();
+        if (slug === "hamid") {
+          expect(status).toContain("hamidazaz.com");
+          continue;
+        }
         expect(status).not.toMatch(/launched|production|live|publié|مُطلق/);
       }
     }

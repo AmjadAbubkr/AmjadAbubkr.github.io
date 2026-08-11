@@ -91,6 +91,7 @@ export type SiteContent = {
   caseStudy: {
     back: string;
     next: string;
+    visit: string;
     role: string;
     status: string;
     technologies: string;

@@ -108,6 +108,7 @@ export const fr = {
   caseStudy: {
     back: "Retour aux projets",
     next: "Étude de cas suivante",
+    visit: "Visiter le site en ligne",
     role: "Rôle",
     status: "Statut",
     technologies: "Contexte technologique",
@@ -255,7 +256,7 @@ export const fr = {
     hamid: {
       title: "Hamid",
       category: "Plateforme client · Publication multilingue",
-      status: "Préparation du déploiement",
+      status: "En ligne sur hamidazaz.com",
       role: "Ingénieur full-stack principal",
       summary:
         "Un profil public en arabe et en français, accompagné d'un portail privé de publication pour un diplomate et homme politique tchadien.",
@@ -290,7 +291,7 @@ export const fr = {
       ],
       limitsLabel: "Limites actuelles",
       limits: [
-        "L'étude reste en préparation de déploiement tant qu'une mise en production n'est pas vérifiée.",
+        "Le site public est en ligne sur hamidazaz.com ; cette étude ne revendique aucun résultat au-delà du déploiement.",
         "L'identité, la carrière, les opinions et les réalisations de Hamid appartiennent au client et ne sont pas celles d'Amdjad.",
         "Le produit prend volontairement en charge l'arabe et le français seulement ; l'anglais était hors périmètre.",
       ],

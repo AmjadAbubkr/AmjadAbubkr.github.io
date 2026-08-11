@@ -74,7 +74,7 @@ The name or monogram returns to the top. Do not include Services, Blog, Contact,
 ### 4. Hamid
 
 - Attribution: **Lead Full-Stack Engineer for a client public-profile platform**.
-- Status: **Deployment preparation** until a live production deployment is verified.
+- Status: **Live at [hamidazaz.com](https://hamidazaz.com/)**.
 - Product: an Arabic-and-French public profile plus a private publishing Portal for a Chadian diplomat and politician.
 - Central theme: build a secure, maintainable multilingual publishing system where one subject controls structured public information.
 - Evidence may cover Next.js, Supabase, synchronized bilingual publishing, RTL-safe layouts, passkey-oriented access, content lifecycle rules, and Netlify deployment architecture.

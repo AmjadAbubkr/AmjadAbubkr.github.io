@@ -1,73 +1,19 @@
 ---
-import { projectMarks, type ProjectSlug } from "@/data/types";
+import type { ProjectSlug } from "@/data/types";
 
 interface Props {
   slug: ProjectSlug;
-  title: string;
 }
 
-const { slug, title } = Astro.props;
+const { slug } = Astro.props;
+const covers: Record<ProjectSlug, string> = {
+  khidme: "/images/khidme-cover.webp",
+  khalawat: "/images/khalawat-cover.webp",
+  "meeting-app": "/images/meeting-app-cover.webp",
+  hamid: "/images/hamid-cover.webp",
+};
 ---
 
-<div class:list={["project-visual", `project-visual--${slug}`]} aria-label={`${title} visual`} role="img">
-  <div class="project-visual-topline">
-    <span>{projectMarks[slug]}</span>
-    <span class="visual-dot"></span>
-  </div>
-
-  {
-    slug === "khidme" && (
-      <div class="khidme-ui" aria-hidden="true">
-        <div class="khidme-phone">
-          <span class="phone-bar"></span>
-          <div class="worker-row"><i></i><b></b><em></em></div>
-          <div class="worker-row"><i></i><b></b><em></em></div>
-          <div class="worker-row"><i></i><b></b><em></em></div>
-          <div class="phone-nav"><span></span><span></span><span></span></div>
-        </div>
-        <div class="khidme-card"><span>خدمة</span><strong>NDJ</strong></div>
-      </div>
-    )
-  }
-
-  {
-    slug === "khalawat" && (
-      <div class="khalawat-ui" aria-hidden="true">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="shield-mark"><span>ك</span></div>
-        <div class="dns-line"><i></i><i></i><i></i><i></i><i></i></div>
-      </div>
-    )
-  }
-
-  {
-    slug === "meeting-app" && (
-      <div class="meeting-ui" aria-hidden="true">
-        <div class="waveform">
-          {[18, 42, 26, 62, 34, 78, 48, 88, 40, 68, 30, 54, 22].map((height) => (
-            <i style={`--wave-height:${height}%`}></i>
-          ))}
-        </div>
-        <div class="report-sheet">
-          <span></span><b></b><span></span><span></span><b></b><span></span>
-        </div>
-        <div class="record-button"></div>
-      </div>
-    )
-  }
-
-  {
-    slug === "hamid" && (
-      <div class="hamid-ui" aria-hidden="true">
-        <div class="profile-page">
-          <div class="profile-nav"><span></span><span></span><span></span></div>
-          <strong>H</strong>
-          <i></i><i></i><i></i>
-          <div class="profile-columns"><b></b><b></b></div>
-        </div>
-        <div class="locale-stamp">AR / FR</div>
-      </div>
-    )
-  }
-</div>
+<figure class:list={["project-visual", `project-visual--${slug}`]}>
+  <img src={covers[slug]} alt="" loading="lazy" decoding="async" />
+</figure>
