@@ -9,6 +9,7 @@ export const en = {
   },
   nav: {
     work: "Work",
+    experience: "Experience",
     journey: "Journey",
     purpose: "Purpose",
     perspectives: "Perspectives",
@@ -56,6 +57,52 @@ export const en = {
         title: "Responsible digital platforms",
         body: "Designing privacy, security, localization, accessibility, and honest failure behavior into the product itself.",
         evidence: "All selected work",
+      },
+    ],
+  },
+  experience: {
+    eyebrow: "Experience",
+    title: "Responsibilities that grew with the work.",
+    intro:
+      "From hands-on delivery to leading a web-development team, these roles show how I contribute to people, projects, and communication.",
+    items: [
+      {
+        period: "2024–2026",
+        organization: "Académie Génies Numériques",
+        role: "Team Member · Head of Web Development · Social Media Manager · Team Leader",
+        highlights: [
+          "Supported and guided the team in web development.",
+          "Managed the team's social media, reaching 300,000 views and 2,000 TikTok followers.",
+          "Became team leader in late 2025.",
+        ],
+      },
+      {
+        period: "2025–2026",
+        organization: "V-Tech Albideynet Team",
+        role: "CTO and Team Member",
+        highlights: [
+          "Built the V-Tech website.",
+          "Helped plan the Albideynet mobile application.",
+          "Managed the team's social media account.",
+        ],
+      },
+      {
+        period: "2026",
+        organization: "Alchazali Network",
+        role: "Shop Assistant",
+        highlights: ["Assisted with Word, PowerPoint, and Canva work."],
+      },
+      {
+        period: "2025",
+        organization: "Université Roi Fayçal",
+        role: "Assistant to the Head of Studies Affairs",
+        highlights: ["Assisted with extracting student-grade data using Excel and Word."],
+      },
+      {
+        period: "2022–2023",
+        organization: "SAS Agency",
+        role: "Web Designer and Developer",
+        highlights: ["Helped build the Adibebe website."],
       },
     ],
   },

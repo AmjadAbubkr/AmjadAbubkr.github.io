@@ -9,6 +9,7 @@ export const fr = {
   },
   nav: {
     work: "Projets",
+    experience: "Expérience",
     journey: "Parcours",
     purpose: "Vocation",
     perspectives: "Réflexions",
@@ -56,6 +57,52 @@ export const fr = {
         title: "Plateformes numériques responsables",
         body: "Intégrer la confidentialité, la sécurité, la localisation, l'accessibilité et des échecs honnêtes dans le produit lui-même.",
         evidence: "Tous les projets choisis",
+      },
+    ],
+  },
+  experience: {
+    eyebrow: "Expérience",
+    title: "Des responsabilités qui ont grandi avec le travail.",
+    intro:
+      "De la réalisation concrète à la direction d'une équipe de développement web, ces rôles montrent ma contribution aux personnes, aux projets et à la communication.",
+    items: [
+      {
+        period: "2024–2026",
+        organization: "Académie Génies Numériques",
+        role: "Membre d'équipe · Responsable du développement web · Gestionnaire des réseaux sociaux · Chef d'équipe",
+        highlights: [
+          "Accompagné et guidé l'équipe dans le développement web.",
+          "Géré les réseaux sociaux de l'équipe, avec 300 000 vues et 2 000 abonnés sur TikTok.",
+          "Devenu chef d'équipe fin 2025.",
+        ],
+      },
+      {
+        period: "2025–2026",
+        organization: "V-Tech Albideynet Team",
+        role: "Directeur technique et membre d'équipe",
+        highlights: [
+          "Créé le site web V-Tech.",
+          "Participé à la planification de l'application mobile Albideynet.",
+          "Géré le compte de réseau social de l'équipe.",
+        ],
+      },
+      {
+        period: "2026",
+        organization: "Alchazali Network",
+        role: "Assistant de boutique",
+        highlights: ["Assisté sur des travaux Word, PowerPoint et Canva."],
+      },
+      {
+        period: "2025",
+        organization: "Université Roi Fayçal",
+        role: "Assistant du responsable des affaires académiques",
+        highlights: ["Assisté à l'extraction des données de notes des étudiants avec Excel et Word."],
+      },
+      {
+        period: "2022–2023",
+        organization: "SAS Agency",
+        role: "Concepteur et développeur web",
+        highlights: ["Participé à la création du site web Adibebe."],
       },
     ],
   },

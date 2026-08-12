@@ -96,6 +96,32 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
     </div>
   </section>
 
+  <section class="experience-section" id="experience" aria-labelledby="experience-title">
+    <div class="container experience-layout">
+      <div class="experience-heading reveal">
+        <SectionLabel>{content.experience.eyebrow}</SectionLabel>
+        <h2 id="experience-title">{content.experience.title}</h2>
+        <p>{content.experience.intro}</p>
+      </div>
+      <ol class="experience-list">
+        {
+          content.experience.items.map((item, index) => (
+            <li class="reveal" style={`--reveal-delay:${index * 80}ms`}>
+              <p class="experience-period">{item.period}</p>
+              <article>
+                <h3>{item.organization}</h3>
+                <p class="experience-role">{item.role}</p>
+                <ul>
+                  {item.highlights.map((highlight) => <li>{highlight}</li>)}
+                </ul>
+              </article>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
   <section class="journey-section" id="journey" aria-labelledby="journey-title">
     <div class="container journey-layout">
       <div class="journey-heading reveal">
@@ -307,6 +333,7 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
 
   .work-intro h2,
   .capabilities-heading h2,
+  .experience-heading h2,
   .journey-heading h2,
   .purpose-heading h2 {
     margin: 0;
@@ -338,6 +365,7 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
   }
 
   .capabilities-layout,
+  .experience-layout,
   .journey-layout,
   .purpose-layout {
     display: grid;
@@ -353,6 +381,17 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
   .capability-item h3 { margin-block-end: 0.75rem; font-size: clamp(1.6rem, 3vw, 2.35rem); letter-spacing: -0.045em; line-height: 1.1; }
   .capability-item p { max-width: 40rem; margin-block-end: 1rem; color: var(--text-secondary); }
   .capability-item small { color: var(--text-muted); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .experience-section { padding-block: var(--section-space); background: var(--bg-deep); }
+  .experience-heading > p { max-width: 34rem; margin-block-start: 1.5rem; color: var(--text-secondary); }
+  .experience-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--divider); }
+  .experience-list > li { display: grid; padding-block: 2.25rem; grid-template-columns: minmax(5.5rem, 0.32fr) 1fr; gap: 1.5rem; border-bottom: 1px solid var(--divider); }
+  .experience-period { margin: 0; color: var(--accent); font-size: 0.75rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .experience-list article { min-width: 0; }
+  .experience-list h3 { margin: 0; font-size: clamp(1.45rem, 2.5vw, 2rem); letter-spacing: -0.04em; line-height: 1.1; text-wrap: balance; }
+  .experience-role { margin-block: 0.65rem 1rem; color: var(--text-secondary); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1.45; }
+  .experience-list ul { display: grid; gap: 0.5rem; margin: 0; padding-inline-start: 1.1rem; color: var(--text-secondary); }
+  .experience-list ul li { padding-inline-start: 0.15rem; }
 
   .journey-section { padding-block: var(--section-space); background: var(--bg-deep); }
   .journey-layout { grid-template-areas: "heading list" "note list"; }
@@ -389,6 +428,7 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
   @media (max-width: 800px) {
     .work-intro,
     .capabilities-layout,
+    .experience-layout,
     .journey-layout,
     .purpose-layout { grid-template-columns: 1fr; gap: 3rem; }
     .journey-layout { grid-template-areas: "heading" "list" "note"; }
@@ -412,6 +452,7 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
     .projects-grid { grid-template-columns: 1fr; padding-block-end: 0; }
     .projects-grid :global(.project-card:nth-child(even)) { transform: none; }
     .capability-item,
+    .experience-list > li,
     .journey-list li { grid-template-columns: 2.3rem 1fr; gap: 0.8rem; }
   }
 

@@ -33,6 +33,7 @@ export type SiteContent = {
   };
   nav: {
     work: string;
+    experience: string;
     journey: string;
     purpose: string;
     perspectives: string;
@@ -60,6 +61,17 @@ export type SiteContent = {
     title: string;
     intro: string;
     items: Array<{ number: string; title: string; body: string; evidence: string }>;
+  };
+  experience: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: Array<{
+      period: string;
+      organization: string;
+      role: string;
+      highlights: string[];
+    }>;
   };
   journey: {
     eyebrow: string;
