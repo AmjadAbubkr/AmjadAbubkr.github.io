@@ -10,6 +10,7 @@ export const en = {
   nav: {
     work: "Work",
     experience: "Experience",
+    communities: "Communities",
     journey: "Journey",
     purpose: "Purpose",
     perspectives: "Perspectives",
@@ -103,6 +104,26 @@ export const en = {
         organization: "SAS Agency",
         role: "Web Designer and Developer",
         highlights: ["Helped build the Adibebe website."],
+      },
+    ],
+  },
+  communities: {
+    eyebrow: "Community collaborations",
+    title: "Building with Chad's digital community.",
+    intro:
+      "Collaboration with local technology communities keeps the work connected to people, shared learning, and practical impact.",
+    items: [
+      {
+        name: "Code For Chad",
+        description: "Collaboration on locally developed technology projects, including Meeting and the open-source Khalawat project.",
+        image: "/images/code-for-chad.jpg",
+        imageAlt: "Code For Chad logo",
+      },
+      {
+        name: "Smart Africa Youth Chapter Chad",
+        description: "Community collaboration focused on youth participation, digital skills, and technology-led development in Chad.",
+        image: "/images/smart-africa-youth-chapter-chad.jpg",
+        imageAlt: "Smart Africa Youth Chapter Chad logo",
       },
     ],
   },
@@ -212,7 +233,7 @@ export const en = {
       title: "Khalawat",
       category: "Android VPN · Privacy-conscious behavior design",
       status: "Android MVP — in development",
-      role: "Creator & Lead Android Engineer",
+      role: "Creator & Lead Android Engineer · Featured by Code For Chad",
       summary:
         "A voluntary digital self-discipline tool for Muslims that creates a private moment of friction before access to harmful content.",
       theme: "Create space for a different choice—without surveillance or shame.",
@@ -243,6 +264,7 @@ export const en = {
         "Packet parsing, blocklist matching, resolver fallback, forwarding retries, and loopback-only interventions.",
         "Offline multilingual spiritual content and persistent escalation behavior.",
         "Automated unit tests, Android lint verification, and a successful release build in the latest hardening cycle.",
+        "Code For Chad publicly featured Khalawat as an open-source project developed by Amdjad Aboubakar and invited contributors.",
       ],
       limitsLabel: "Current limits",
       limits: [
@@ -258,7 +280,7 @@ export const en = {
       title: "Meeting App",
       category: "React Native · Audio and AI workflow",
       status: "Android application — in development",
-      role: "Lead Mobile Engineer",
+      role: "Lead Mobile Engineer · Code For Chad collaboration",
       summary:
         "A mobile workflow for recording meetings, transcribing audio, generating structured multilingual reports, and keeping the results useful afterward.",
       theme: "Make a complex processing pipeline feel understandable and recoverable.",
@@ -289,6 +311,7 @@ export const en = {
         "Recording, chunking, transcription, report generation, audio playback, and PDF/DOCX export flows.",
         "Compatible parsing for multilingual report formats across historical and current records.",
         "Navigation, lock-state, safe-area, retry, and performance corrections backed by tests and CI checks.",
+        "Code For Chad publicly presented Meeting as a locally developed solution, named Amdjad Aboubakar as its developer, and linked to the online demo.",
       ],
       limitsLabel: "Current limits",
       limits: [

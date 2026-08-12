@@ -34,6 +34,7 @@ export type SiteContent = {
   nav: {
     work: string;
     experience: string;
+    communities: string;
     journey: string;
     purpose: string;
     perspectives: string;
@@ -71,6 +72,17 @@ export type SiteContent = {
       organization: string;
       role: string;
       highlights: string[];
+    }>;
+  };
+  communities: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: Array<{
+      name: string;
+      description: string;
+      image: string;
+      imageAlt: string;
     }>;
   };
   journey: {

@@ -23,6 +23,7 @@ const home = localePath(locale);
     <nav class="desktop-nav" aria-label={content.nav.menu}>
       <a href={`${home}#work`}>{content.nav.work}</a>
       <a href={`${home}#experience`}>{content.nav.experience}</a>
+      <a href={`${home}#communities`}>{content.nav.communities}</a>
       <a href={`${home}#journey`}>{content.nav.journey}</a>
       <a href={`${home}#purpose`}>{content.nav.purpose}</a>
       <LanguageLinks locale={locale} currentPath={currentPath} label={content.nav.language} />
@@ -36,6 +37,7 @@ const home = localePath(locale);
       <div class="mobile-nav-panel">
         <a href={`${home}#work`}>{content.nav.work}</a>
         <a href={`${home}#experience`}>{content.nav.experience}</a>
+        <a href={`${home}#communities`}>{content.nav.communities}</a>
         <a href={`${home}#journey`}>{content.nav.journey}</a>
         <a href={`${home}#purpose`}>{content.nav.purpose}</a>
         <LanguageLinks locale={locale} currentPath={currentPath} label={content.nav.language} />

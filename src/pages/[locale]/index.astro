@@ -122,6 +122,31 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
     </div>
   </section>
 
+  <section class="communities-section" id="communities" aria-labelledby="communities-title">
+    <div class="container communities-layout">
+      <div class="communities-heading reveal">
+        <SectionLabel>{content.communities.eyebrow}</SectionLabel>
+        <h2 id="communities-title">{content.communities.title}</h2>
+        <p>{content.communities.intro}</p>
+      </div>
+      <div class="communities-grid">
+        {
+          content.communities.items.map((item, index) => (
+            <article class="community-card reveal" style={`--reveal-delay:${index * 100}ms`}>
+              <figure>
+                <img src={item.image} alt={item.imageAlt} width="200" height="200" loading="lazy" decoding="async" />
+              </figure>
+              <div>
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <section class="journey-section" id="journey" aria-labelledby="journey-title">
     <div class="container journey-layout">
       <div class="journey-heading reveal">
@@ -334,6 +359,7 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
   .work-intro h2,
   .capabilities-heading h2,
   .experience-heading h2,
+  .communities-heading h2,
   .journey-heading h2,
   .purpose-heading h2 {
     margin: 0;
@@ -366,6 +392,7 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
 
   .capabilities-layout,
   .experience-layout,
+  .communities-layout,
   .journey-layout,
   .purpose-layout {
     display: grid;
@@ -392,6 +419,15 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
   .experience-role { margin-block: 0.65rem 1rem; color: var(--text-secondary); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1.45; }
   .experience-list ul { display: grid; gap: 0.5rem; margin: 0; padding-inline-start: 1.1rem; color: var(--text-secondary); }
   .experience-list ul li { padding-inline-start: 0.15rem; }
+
+  .communities-section { padding-block: var(--section-space); background: var(--bg-primary); }
+  .communities-heading > p { max-width: 34rem; margin-block-start: 1.5rem; color: var(--text-secondary); }
+  .communities-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .community-card { display: grid; min-height: 17rem; grid-template-columns: minmax(7rem, 0.65fr) minmax(0, 1fr); gap: clamp(1.25rem, 3vw, 2.5rem); align-items: center; padding: clamp(1.25rem, 3vw, 2rem); background: var(--bg-deep); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1); }
+  .community-card figure { display: grid; aspect-ratio: 1; margin: 0; padding: 1rem; place-items: center; background: #fff; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1); }
+  .community-card img { width: 100%; height: 100%; object-fit: contain; }
+  .community-card h3 { margin: 0 0 0.7rem; font-size: clamp(1.35rem, 2.5vw, 1.8rem); letter-spacing: -0.04em; line-height: 1.08; text-wrap: balance; }
+  .community-card p { margin: 0; color: var(--text-secondary); font-size: 0.88rem; }
 
   .journey-section { padding-block: var(--section-space); background: var(--bg-deep); }
   .journey-layout { grid-template-areas: "heading list" "note list"; }
@@ -429,10 +465,12 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
     .work-intro,
     .capabilities-layout,
     .experience-layout,
+    .communities-layout,
     .journey-layout,
     .purpose-layout { grid-template-columns: 1fr; gap: 3rem; }
     .journey-layout { grid-template-areas: "heading" "list" "note"; }
     .projects-grid { gap: 4rem 1.5rem; }
+    .communities-grid { grid-template-columns: 1fr; }
     .projects-grid :global(.project-card:nth-child(even)) { transform: translateY(4rem); }
     .projects-grid { padding-block-end: 4rem; }
   }
@@ -454,6 +492,7 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
     .capability-item,
     .experience-list > li,
     .journey-list li { grid-template-columns: 2.3rem 1fr; gap: 0.8rem; }
+    .community-card { min-height: 0; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; padding: 1rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
