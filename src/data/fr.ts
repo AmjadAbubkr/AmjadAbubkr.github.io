@@ -29,7 +29,7 @@ export const fr = {
   },
   work: {
     eyebrow: "Projets choisis",
-    title: "Quatre produits. Quatre formes de responsabilité.",
+    title: "Cinq projets. Cinq formes de responsabilité.",
     intro:
       "Ces études de cas présentent le problème, les décisions, les preuves et les limites — pas une liste décorative de technologies.",
     read: "Lire l'étude de cas",
