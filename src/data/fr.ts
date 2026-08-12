@@ -127,6 +127,18 @@ export const fr = {
       },
     ],
   },
+  media: {
+    eyebrow: "Dans les médias",
+    title: "Parler de V-Tech avec MRTV.",
+    outlet: "MRTV",
+    date: "27 janvier 2026",
+    body:
+      "J'ai été interviewé par MRTV au sujet de V-Tech, une équipe dont je faisais partie, et du travail que nous construisions ensemble.",
+    image: "/images/mrtv-v-tech-interview.jpg",
+    imageAlt: "Amdjad Aboubakar répond aux questions de MRTV au sujet de V-Tech.",
+    link: "https://www.facebook.com/share/v/17FwehLRKA/",
+    linkLabel: "Voir l'interview sur Facebook",
+  },
   journey: {
     eyebrow: "Parcours",
     title: "Apprendre en assumant davantage de responsabilités.",

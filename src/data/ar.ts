@@ -124,6 +124,18 @@ export const ar = {
       },
     ],
   },
+  media: {
+    eyebrow: "في الإعلام",
+    title: "الحديث عن V-Tech مع MRTV.",
+    outlet: "MRTV",
+    date: "27 يناير 2026",
+    body:
+      "أجرت معي MRTV مقابلة حول V-Tech، وهو فريق كنت أحد أعضائه، والعمل الذي كنا نبنيه معاً.",
+    image: "/images/mrtv-v-tech-interview.jpg",
+    imageAlt: "أمجد أبوبكر يتحدث إلى مراسل MRTV عن V-Tech.",
+    link: "https://www.facebook.com/share/v/17FwehLRKA/",
+    linkLabel: "شاهد المقابلة على فيسبوك",
+  },
   journey: {
     eyebrow: "المسار",
     title: "التعلّم عبر تحمّل مسؤولية أكبر.",

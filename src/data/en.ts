@@ -127,6 +127,18 @@ export const en = {
       },
     ],
   },
+  media: {
+    eyebrow: "In the media",
+    title: "Speaking about V-Tech with MRTV.",
+    outlet: "MRTV",
+    date: "27 January 2026",
+    body:
+      "I was interviewed by MRTV about V-Tech, a team I was part of, and the work we were building together.",
+    image: "/images/mrtv-v-tech-interview.jpg",
+    imageAlt: "Amdjad Aboubakar speaking to an MRTV interviewer about V-Tech.",
+    link: "https://www.facebook.com/share/v/17FwehLRKA/",
+    linkLabel: "Watch the interview on Facebook",
+  },
   journey: {
     eyebrow: "Journey",
     title: "Learning by carrying larger responsibility.",

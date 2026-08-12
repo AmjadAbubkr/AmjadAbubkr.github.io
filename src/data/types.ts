@@ -85,6 +85,17 @@ export type SiteContent = {
       imageAlt: string;
     }>;
   };
+  media: {
+    eyebrow: string;
+    title: string;
+    outlet: string;
+    date: string;
+    body: string;
+    image: string;
+    imageAlt: string;
+    link: string;
+    linkLabel: string;
+  };
   journey: {
     eyebrow: string;
     title: string;
