@@ -29,7 +29,7 @@ export const en = {
   },
   work: {
     eyebrow: "Selected work",
-    title: "Four products. Four different kinds of responsibility.",
+    title: "Five projects. Five different kinds of responsibility.",
     intro:
       "These case studies focus on the problem, the decisions, the evidence, and the limits—not on decorative technology lists.",
     read: "Read case study",
