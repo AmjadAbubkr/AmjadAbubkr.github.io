@@ -369,6 +369,52 @@ export const fr = {
       reflection:
         "Lorsqu'un logiciel représente une personne réelle dans la vie publique, le modèle de contenu, la complétude des langues, le contrôle d'accès et le comportement en cas d'absence deviennent des questions de confiance.",
     },
+    "game-technologie": {
+      title: "Game Technologie",
+      category: "Commerce mobile · Expo / React Native",
+      status: "Disponible sur Google Play",
+      role: "Créateur et ingénieur mobile",
+      summary:
+        "Une boutique de jeux vidéo Android pour parcourir les consoles, les jeux et les accessoires, avec authentification, catalogue, gestion et commande via WhatsApp propulsés par Firebase.",
+      theme: "Rendre un parcours d'achat réel simple, souple et adapté aux opérations locales.",
+      problemLabel: "Le problème",
+      problem:
+        "Une boutique de jeux vidéo a besoin de plus qu'une liste de produits : les clients doivent pouvoir parcourir et examiner les articles, tandis que le magasin a besoin d'un catalogue et d'un parcours de commande faciles à gérer.",
+      responseLabel: "La réponse",
+      response:
+        "J'ai construit une application Expo multiplateforme avec authentification client, catégories et fiches produits, panier et commande via WhatsApp, ainsi qu'un espace d'administration pour les produits et les commandes. L'application prend aussi en charge l'anglais, le français et l'arabe avec une base adaptée au RTL.",
+      decisionsLabel: "Décisions structurantes",
+      decisions: [
+        {
+          title: "Une application, deux espaces de travail",
+          body: "Le même code prend en charge une boutique pour les clients et un tableau de bord d'administration, en rapprochant la gestion des produits et des commandes de l'expérience d'achat.",
+        },
+        {
+          title: "Des données cloud aux limites claires",
+          body: "Firebase Auth, Firestore et Storage fournissent les bases de l'identité, du catalogue, des médias et des commandes, tandis que l'état reste explicite dans l'application.",
+        },
+        {
+          title: "Un parcours de commande adapté à l'activité",
+          body: "Le panier mène vers une transmission de commande par WhatsApp au lieu de prétendre que l'application intègre un système de paiement complet.",
+        },
+      ],
+      evidenceLabel: "Preuves mises en œuvre",
+      evidence: [
+        "Application Android construite avec Expo 55 et React Native 0.83, avec React Navigation et Zustand.",
+        "Parcours client pour l'authentification, l'accueil, les catégories, les détails produits, le panier, la commande et le compte.",
+        "Parcours d'administration pour gérer les produits et consulter les commandes, avec les services Firebase.",
+        "Prise en charge de l'anglais, du français et de l'arabe, mise en page adaptée au RTL, politique de confidentialité et demande de suppression de compte.",
+      ],
+      limitsLabel: "Limites actuelles",
+      limits: [
+        "L'application est présentée comme disponible sur Google Play ; ce portfolio ne revendique ni ventes, ni adoption, ni revenus sans données vérifiées.",
+        "La transmission de commande par WhatsApp n'est ni un processeur de paiement natif ni un système complet d'exécution.",
+        "Le catalogue et les commandes dépendent d'une configuration correcte des services Firebase et des opérations du magasin.",
+      ],
+      reflectionLabel: "Ce que ce projet m'a appris",
+      reflection:
+        "Un produit de commerce utile respecte la réalité derrière l'interface : le catalogue, la transmission de la commande, la personne qui gère le stock et le client qui a besoin d'un chemin simple vers l'achat.",
+    },
   },
   errors: {
     notFoundTitle: "Cette page ne fait pas partie du parcours.",

@@ -1,5 +1,5 @@
 export const locales = ["fr", "ar", "en"] as const;
-export const projectSlugs = ["khidme", "khalawat", "meeting-app", "hamid"] as const;
+export const projectSlugs = ["hamid", "game-technologie", "khidme", "khalawat", "meeting-app"] as const;
 
 export type Locale = (typeof locales)[number];
 export type ProjectSlug = (typeof projectSlugs)[number];
@@ -134,6 +134,7 @@ export const projectTechnologies: Record<ProjectSlug, string[]> = {
   khalawat: ["Kotlin", "Jetpack Compose", "VpnService", "Room", "Android Keystore"],
   "meeting-app": ["React Native", "TypeScript", "SQLite", "FFmpeg", "Gemini", "Groq"],
   hamid: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Netlify"],
+  "game-technologie": ["Expo", "React Native", "Firebase", "Firestore", "Zustand", "EAS Build"],
 };
 
 export const projectMarks: Record<ProjectSlug, string> = {
@@ -141,4 +142,5 @@ export const projectMarks: Record<ProjectSlug, string> = {
   khalawat: "KL",
   "meeting-app": "MA",
   hamid: "HA",
+  "game-technologie": "GT",
 };
