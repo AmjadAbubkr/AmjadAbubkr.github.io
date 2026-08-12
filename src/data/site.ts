@@ -21,4 +21,5 @@ export const socialProfiles = [
 export const projectLinks: Partial<Record<ProjectSlug, string>> = {
   "meeting-app": "https://amjadabubkr.github.io/meeting/",
   hamid: "https://hamidazaz.com/",
+  "game-technologie": "https://play.google.com/store/apps/details?id=com.cybernexus.gamingstore&hl=fr",
 };

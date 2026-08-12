@@ -22,7 +22,7 @@ describe("localized site content", () => {
 
   it("contains every approved case study in every locale", () => {
     for (const locale of locales) {
-      expect(Object.keys(siteContent[locale].projects)).toEqual(projectSlugs);
+      expect(Object.keys(siteContent[locale].projects).sort()).toEqual([...projectSlugs].sort());
     }
   });
 

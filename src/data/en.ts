@@ -369,6 +369,52 @@ export const en = {
       reflection:
         "When software represents a real person in public life, content modeling, translation completeness, access control, and absence behavior become questions of trust—not just implementation details.",
     },
+    "game-technologie": {
+      title: "Game Technologie",
+      category: "Mobile commerce · Expo / React Native",
+      status: "Available on Google Play",
+      role: "Creator & Mobile Engineer",
+      summary:
+        "An Android gaming store for browsing consoles, games, and accessories, with Firebase-backed authentication, catalog management, and WhatsApp checkout.",
+      theme: "Make a real shopping flow feel focused, flexible, and ready for local operations.",
+      problemLabel: "The problem",
+      problem:
+        "A gaming shop needs more than a product list: customers need a clear way to browse and review items, while the store needs a manageable catalog and order workflow behind the storefront.",
+      responseLabel: "The response",
+      response:
+        "I built a cross-platform Expo application with customer authentication, category and product-detail flows, cart and WhatsApp checkout, plus an admin area for products and orders. The app also includes English, French, and Arabic support with an RTL-aware foundation.",
+      decisionsLabel: "Decisions that shaped the product",
+      decisions: [
+        {
+          title: "One app, two working surfaces",
+          body: "The same codebase supports a customer storefront and an admin dashboard, keeping product and order operations close to the shopping experience.",
+        },
+        {
+          title: "Cloud data with clear boundaries",
+          body: "Firebase Auth, Firestore, and Storage provide the identity, catalog, media, and order foundations while state stays explicit in the app.",
+        },
+        {
+          title: "Checkout that fits the business",
+          body: "The cart leads to a WhatsApp-based order handoff instead of pretending the app includes a full payment system.",
+        },
+      ],
+      evidenceLabel: "Implemented evidence",
+      evidence: [
+        "Android app built with Expo 55 and React Native 0.83, with React Navigation and Zustand.",
+        "Customer flows for authentication, home, categories, product details, cart, checkout, and account controls.",
+        "Admin flows for product management and order review, backed by Firebase services.",
+        "English, French, and Arabic localization, RTL-aware layout, privacy policy, and account-deletion request screens.",
+      ],
+      limitsLabel: "Current limits",
+      limits: [
+        "The app is presented as available on Google Play; this portfolio does not claim sales, adoption, or revenue outcomes without verified data.",
+        "The WhatsApp checkout handoff is not a native payment processor or fulfillment system.",
+        "Catalog and order behavior depend on correctly configured Firebase services and store operations.",
+      ],
+      reflectionLabel: "What this work taught me",
+      reflection:
+        "A useful commerce product respects the reality behind the interface: the catalog, the order handoff, the person managing stock, and the customer who needs a simple path to purchase.",
+    },
   },
   errors: {
     notFoundTitle: "This page is not part of the story.",
