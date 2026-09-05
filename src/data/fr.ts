@@ -98,6 +98,22 @@ export const fr = {
         ],
       },
       {
+        period: "2025",
+        organization: "Programme de formation en IA — 2 000 jeunes tchadiens initiés à l'IA",
+        role: "Assistant coach",
+        highlights: [
+          "Assistant coach pendant la formation gratuite en intelligence artificielle tenue à N'Djamena du 4 au 14 août 2025, qui a initié 2 000 jeunes tchadiens à l'IA.",
+        ],
+      },
+      {
+        period: "Février 2025",
+        organization: "Université Roi Fayçal — Conférence scientifique internationale sur les perspectives du développement durable au Tchad",
+        role: "Participant · Comité scientifique",
+        highlights: [
+          "Participation à la conférence scientifique internationale sur les perspectives du développement durable au Tchad, organisée par l'Université Roi Fayçal.",
+        ],
+      },
+      {
         period: "2026",
         organization: "Alchazali Network",
         role: "Assistant de boutique",
@@ -160,6 +176,22 @@ export const fr = {
         imageAlt: "Photo de groupe des participants au forum sur l'énergie nucléaire à l'American Center, ambassade des États-Unis à N'Djamena",
         link: "https://techdiplomacy.org/",
         linkLabel: "À propos du Krach Institute",
+      },
+      {
+        outlet: "Programme de formation en IA · Moov Africa",
+        date: "4–14 août 2025",
+        body:
+          "Assistant coach de la formation gratuite en intelligence artificielle qui a initié 2 000 jeunes tchadiens à l'IA à N'Djamena.",
+        image: "/images/ai-training-2000-jeunes.jpg",
+        imageAlt: "Amdjad Aboubakar, en bleu avec un badge de participant, avec un autre participant à la formation en IA des 2 000 jeunes tchadiens",
+      },
+      {
+        outlet: "Université Roi Fayçal",
+        date: "Février 2025",
+        body:
+          "Participant à la conférence scientifique internationale sur les perspectives du développement durable au Tchad, organisée par l'Université Roi Fayçal.",
+        image: "/images/conference-roi-faycal.jpg",
+        imageAlt: "Amdjad Aboubakar avec d'autres participants à la conférence scientifique de l'Université Roi Fayçal",
       },
     ],
   },

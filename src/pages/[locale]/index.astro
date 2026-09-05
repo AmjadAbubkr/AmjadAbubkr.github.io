@@ -174,10 +174,12 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
           <div class="media-copy">
             <p class="media-meta"><span>{feature.outlet}</span><time>{feature.date}</time></p>
             <p>{feature.body}</p>
-            <a href={feature.link} target="_blank" rel="noreferrer">
-              {feature.linkLabel}
-              <span aria-hidden="true">↗</span>
-            </a>
+            {feature.link ? (
+              <a href={feature.link} target="_blank" rel="noreferrer">
+                {feature.linkLabel}
+                <span aria-hidden="true">↗</span>
+              </a>
+            ) : null}
           </div>
         </article>
       ))}

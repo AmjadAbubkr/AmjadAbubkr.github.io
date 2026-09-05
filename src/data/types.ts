@@ -94,8 +94,8 @@ export type SiteContent = {
       body: string;
       image: string;
       imageAlt: string;
-      link: string;
-      linkLabel: string;
+      link?: string;
+      linkLabel?: string;
     }>;
   };
   journey: {

@@ -98,6 +98,22 @@ export const en = {
         ],
       },
       {
+        period: "2025",
+        organization: "AI Training Program — 2,000 Chadian Youth Initiated to AI",
+        role: "Coach Assistant",
+        highlights: [
+          "Served as a coach assistant during the free artificial-intelligence training held in N'Djamena from 4 to 14 August 2025, which initiated 2,000 young Chadians to AI.",
+        ],
+      },
+      {
+        period: "February 2025",
+        organization: "Université Roi Fayçal — International Scientific Conference on Sustainable Development Prospects in Chad",
+        role: "Participant · Scientific Committee",
+        highlights: [
+          "Took part in the international scientific conference on sustainable development prospects in Chad, organized by King Faisal University.",
+        ],
+      },
+      {
         period: "2026",
         organization: "Alchazali Network",
         role: "Shop Assistant",
@@ -160,6 +176,22 @@ export const en = {
         imageAlt: "Group photo of participants at the nuclear energy forum at the American Center, U.S. Embassy N'Djamena",
         link: "https://techdiplomacy.org/",
         linkLabel: "About the Krach Institute",
+      },
+      {
+        outlet: "AI Training Program · Moov Africa",
+        date: "4–14 August 2025",
+        body:
+          "Coach assistant in the free artificial-intelligence training that initiated 2,000 young Chadians to AI in N'Djamena.",
+        image: "/images/ai-training-2000-jeunes.jpg",
+        imageAlt: "Amdjad Aboubakar, in blue and wearing a participant badge, with a fellow participant at the AI training for 2,000 young Chadians",
+      },
+      {
+        outlet: "Université Roi Fayçal",
+        date: "February 2025",
+        body:
+          "Participant in the international scientific conference on sustainable development prospects in Chad, organized by King Faisal University.",
+        image: "/images/conference-roi-faycal.jpg",
+        imageAlt: "Amdjad Aboubakar with fellow participants at the King Faisal University scientific conference",
       },
     ],
   },
