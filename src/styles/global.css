@@ -272,8 +272,10 @@ blockquote {
 .mobile-nav-panel {
   position: absolute;
   inset-block-start: calc(100% + 0.75rem);
-  inset-inline-end: 0;
+  right: 0;
+  left: auto;
   width: min(82vw, 20rem);
+  max-width: calc(100vw - 2.5rem);
   padding: 1rem;
   background: var(--bg-deep);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1.5rem 4rem rgba(0, 0, 0, 0.35);
