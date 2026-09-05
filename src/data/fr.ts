@@ -89,6 +89,16 @@ export const fr = {
       },
       {
         period: "2026",
+        organization: "Krach Institute for Tech Diplomacy at Purdue — Forum sur l'énergie nucléaire",
+        role: "Participant invité · via Smart Africa Youth Chapter Chad",
+        highlights: [
+          "Invité en tant que membre de Smart Africa Youth Chapter Chad à un forum sur l'énergie nucléaire lié au Krach Institute for Tech Diplomacy at Purdue.",
+          "Session suivie à l'American Center, ambassade des États-Unis à N'Djamena, le 4 septembre 2026.",
+          "Présentations et échanges sur les usages pacifiques de l'énergie nucléaire, la sûreté et la confiance, et ce qu'une énergie fiable signifie pour le Tchad.",
+        ],
+      },
+      {
+        period: "2026",
         organization: "Alchazali Network",
         role: "Assistant de boutique",
         highlights: ["Assisté sur des travaux Word, PowerPoint et Canva."],
@@ -128,16 +138,30 @@ export const fr = {
     ],
   },
   media: {
-    eyebrow: "Dans les médias",
-    title: "Parler de V-Tech avec MRTV.",
-    outlet: "MRTV",
-    date: "27 janvier 2026",
-    body:
-      "J'ai été interviewé par MRTV au sujet de V-Tech, une équipe dont je faisais partie, et du travail que nous construisions ensemble.",
-    image: "/images/mrtv-v-tech-interview.jpg",
-    imageAlt: "Amdjad Aboubakar répond aux questions de MRTV au sujet de V-Tech.",
-    link: "https://www.facebook.com/share/v/17FwehLRKA/",
-    linkLabel: "Voir l'interview sur Facebook",
+    eyebrow: "Médias & forums publics",
+    title: "La couverture, et être présent là où la technologie se discute.",
+    features: [
+      {
+        outlet: "MRTV",
+        date: "27 janvier 2026",
+        body:
+          "J'ai été interviewé par MRTV au sujet de V-Tech, une équipe dont je faisais partie, et du travail que nous construisions ensemble.",
+        image: "/images/mrtv-v-tech-interview.jpg",
+        imageAlt: "Amdjad Aboubakar répond aux questions de MRTV au sujet de V-Tech.",
+        link: "https://www.facebook.com/share/v/17FwehLRKA/",
+        linkLabel: "Voir l'interview sur Facebook",
+      },
+      {
+        outlet: "Ambassade des États-Unis à N'Djamena · Krach Institute for Tech Diplomacy at Purdue",
+        date: "4 septembre 2026",
+        body:
+          "Invité en tant que membre de Smart Africa Youth Chapter Chad à un forum sur l'énergie nucléaire lié au Krach Institute for Tech Diplomacy at Purdue, tenu à l'American Center. Présentations et échanges sur les usages pacifiques de l'énergie nucléaire, la sûreté et la confiance, et une énergie fiable pour le Tchad.",
+        image: "/images/us-embassy-nuclear-forum.jpg",
+        imageAlt: "Photo de groupe des participants au forum sur l'énergie nucléaire à l'American Center, ambassade des États-Unis à N'Djamena",
+        link: "https://techdiplomacy.org/",
+        linkLabel: "À propos du Krach Institute",
+      },
+    ],
   },
   journey: {
     eyebrow: "Parcours",

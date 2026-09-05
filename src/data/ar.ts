@@ -86,6 +86,16 @@ export const ar = {
       },
       {
         period: "2026",
+        organization: "معهد كراخ للدبلوماسية التقنية في بوردو — منتدى الطاقة النووية",
+        role: "مشارك مدعو · عبر Smart Africa Youth Chapter Chad",
+        highlights: [
+          "دُعيت بصفتي عضواً في Smart Africa Youth Chapter Chad إلى منتدى حول الطاقة النووية مرتبط بمعهد كراخ للدبلوماسية التقنية في جامعة بوردو.",
+          "شاركت في الجلسة في المركز الأمريكي بسفارة الولايات المتحدة في نجامينا بتاريخ 4 سبتمبر 2026.",
+          "تابعت عروضاً ونقاشاً حول الاستخدامات السلمية للطاقة النووية والسلامة والثقة ومعنى الطاقة الموثوقة لتشاد.",
+        ],
+      },
+      {
+        period: "2026",
         organization: "Alchazali Network",
         role: "مساعد متجر",
         highlights: ["ساعدت في أعمال Word وPowerPoint وCanva."],
@@ -125,16 +135,30 @@ export const ar = {
     ],
   },
   media: {
-    eyebrow: "في الإعلام",
-    title: "الحديث عن V-Tech مع MRTV.",
-    outlet: "MRTV",
-    date: "27 يناير 2026",
-    body:
-      "أجرت معي MRTV مقابلة حول V-Tech، وهو فريق كنت أحد أعضائه، والعمل الذي كنا نبنيه معاً.",
-    image: "/images/mrtv-v-tech-interview.jpg",
-    imageAlt: "أمجد أبوبكر يتحدث إلى مراسل MRTV عن V-Tech.",
-    link: "https://www.facebook.com/share/v/17FwehLRKA/",
-    linkLabel: "شاهد المقابلة على فيسبوك",
+    eyebrow: "الإعلام والمنتديات العامة",
+    title: "التغطية، والحضور حيث تُناقَش التقنية.",
+    features: [
+      {
+        outlet: "MRTV",
+        date: "27 يناير 2026",
+        body:
+          "أجرت معي MRTV مقابلة حول V-Tech، وهو فريق كنت أحد أعضائه، والعمل الذي كنا نبنيه معاً.",
+        image: "/images/mrtv-v-tech-interview.jpg",
+        imageAlt: "أمجد أبوبكر يتحدث إلى مراسل MRTV عن V-Tech.",
+        link: "https://www.facebook.com/share/v/17FwehLRKA/",
+        linkLabel: "شاهد المقابلة على فيسبوك",
+      },
+      {
+        outlet: "سفارة الولايات المتحدة في نجامينا · معهد كراخ للدبلوماسية التقنية في بوردو",
+        date: "4 سبتمبر 2026",
+        body:
+          "دُعيت بصفتي عضواً في Smart Africa Youth Chapter Chad إلى منتدى حول الطاقة النووية مرتبط بمعهد كراخ للدبلوماسية التقنية في بوردو، عُقد في المركز الأمريكي. تابعت نقاشاً حول الاستخدامات السلمية للطاقة النووية والسلامة والثقة والطاقة الموثوقة لتشاد.",
+        image: "/images/us-embassy-nuclear-forum.jpg",
+        imageAlt: "صورة جماعية للمشاركين في منتدى الطاقة النووية في المركز الأمريكي بسفارة الولايات المتحدة في نجامينا",
+        link: "https://techdiplomacy.org/",
+        linkLabel: "عن معهد كراخ",
+      },
+    ],
   },
   journey: {
     eyebrow: "المسار",

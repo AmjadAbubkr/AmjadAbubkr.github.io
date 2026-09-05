@@ -155,17 +155,32 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
       </div>
       <article class="media-feature reveal" style="--reveal-delay:100ms">
         <figure>
-          <img src={content.media.image} alt={content.media.imageAlt} width="1080" height="1920" loading="lazy" decoding="async" />
+          <img src={content.media.features[0].image} alt={content.media.features[0].imageAlt} width="1080" height="1920" loading="lazy" decoding="async" />
         </figure>
         <div class="media-copy">
-          <p class="media-meta"><span>{content.media.outlet}</span><time>{content.media.date}</time></p>
-          <p>{content.media.body}</p>
-          <a href={content.media.link} target="_blank" rel="noreferrer">
-            {content.media.linkLabel}
+          <p class="media-meta"><span>{content.media.features[0].outlet}</span><time>{content.media.features[0].date}</time></p>
+          <p>{content.media.features[0].body}</p>
+          <a href={content.media.features[0].link} target="_blank" rel="noreferrer">
+            {content.media.features[0].linkLabel}
             <span aria-hidden="true">↗</span>
           </a>
         </div>
       </article>
+      {content.media.features.slice(1).map((feature, index) => (
+        <article class="media-feature media-feature--extra reveal" style={`--reveal-delay:${200 + index * 100}ms`}>
+          <figure>
+            <img src={feature.image} alt={feature.imageAlt} width="1600" height="1000" loading="lazy" decoding="async" />
+          </figure>
+          <div class="media-copy">
+            <p class="media-meta"><span>{feature.outlet}</span><time>{feature.date}</time></p>
+            <p>{feature.body}</p>
+            <a href={feature.link} target="_blank" rel="noreferrer">
+              {feature.linkLabel}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
@@ -455,6 +470,7 @@ const displayName = locale === "ar" ? ["أمجد", "أبوبكر"] : ["Amdjad", 
   .media-section { padding-block: var(--section-space); background: var(--bg-deep); }
   .media-heading h2 { max-width: 10ch; }
   .media-feature { display: grid; grid-template-columns: minmax(13rem, 0.7fr) minmax(0, 1fr); min-height: 32rem; background: var(--bg-card-dark); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1); }
+  .media-feature + .media-feature { margin-block-start: 1rem; }
   .media-feature figure { min-height: 100%; margin: 0; overflow: hidden; background: var(--bg-primary); }
   .media-feature img { width: 100%; height: 100%; object-fit: cover; object-position: 50% top; }
   .media-copy { display: flex; padding: clamp(1.5rem, 5vw, 4rem); flex-direction: column; justify-content: center; }
